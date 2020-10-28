@@ -4,7 +4,7 @@ public class MyFirstProgram {
 
   public static void main (String[]args){
 
-    System.out.println("Hello World!"+ " I am Jane the latest update");
+    System.out.println("Hello World!");
 
 }
 
