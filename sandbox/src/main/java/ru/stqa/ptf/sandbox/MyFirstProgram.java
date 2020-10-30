@@ -1,5 +1,7 @@
 package ru.stqa.ptf.sandbox;
 
+import org.testng.annotations.Test;
+
 public class MyFirstProgram {
 
     public static void main(String[] args) {
@@ -19,5 +21,11 @@ public class MyFirstProgram {
     public static void hello(String somebody) {
         System.out.println("Hello " + somebody + " !");
     }
+
+
+
+
+
+
 
 }
