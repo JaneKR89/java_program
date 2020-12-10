@@ -1,6 +1,6 @@
 package ru.stqa.ptf.addressbook.model;
 
-public class GroupData {
+public class  GroupData {
     private final String name;
     private final String header;
     private final String footer;

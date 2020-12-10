@@ -45,6 +45,7 @@ public class Equation {
                 n = 0;
             }
 
+
         } else if (b != 0) {
             n = 1;
         } else if (c != 0) {
