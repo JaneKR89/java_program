@@ -5,7 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.ptf.addressbook.model.GroupData;
-
+/**
+ * GroupHelper is the Groups Page
+ *
+ * */
 public class GroupHelper extends HelperBase {
 
     public GroupHelper(WebDriver wd) {

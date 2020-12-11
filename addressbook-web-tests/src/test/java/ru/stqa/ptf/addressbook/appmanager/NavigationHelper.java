@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+/**
+ * NavigationHelper is the navigation bar
+ */
 public class NavigationHelper extends HelperBase {
 
     public NavigationHelper(WebDriver wd) {
@@ -12,6 +15,19 @@ public class NavigationHelper extends HelperBase {
     }
 
     public void gotoGroupPage() {
-       click(By.linkText("groups"));
+        if (isElementPresent(By.tagName("h1"))
+                && wd.findElement(By.tagName("h1")).getText().equals("Groups")
+                && isElementPresent(By.name("new"))) {
+            return;
+        }
+        click(By.linkText("groups"));
+    }
+
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))){
+            return;
+        }
+        click(By.linkText("home"));
+
     }
 }

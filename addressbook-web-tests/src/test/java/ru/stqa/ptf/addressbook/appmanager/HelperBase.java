@@ -1,10 +1,14 @@
 package ru.stqa.ptf.addressbook.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.Calendar;
+
+/**
+ * HelperBase это обертка на базовые функции селениум
+ * */
 
 public class HelperBase {
     protected WebDriver wd;
@@ -34,5 +38,26 @@ public class HelperBase {
         } catch (NoAlertPresentException e){
             return false;
         }
+    }
+
+
+    public boolean isElementPresent(By locator) {
+        long timer = Calendar.getInstance().getTime().getTime() + (2 * 1000);
+        boolean warningShowed = false;
+        do {
+            try {
+                wd.findElement(locator);
+                return true;
+            } catch (NotFoundException | TimeoutException e) {
+                if (!warningShowed) {
+                    System.out.println("An Exception occurred after "
+                            + "trying to check is element '" + locator
+                            + "' PRESENT \nTrying to find the element again with timeout = "
+                            + 2);
+                    warningShowed = true;
+                }
+            }
+        } while (Calendar.getInstance().getTime().getTime() < timer);
+        return false;
     }
 }

@@ -7,6 +7,10 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.safari.SafariDriver;
 
+
+/**
+ * The main objects that contains all web site pages
+ */
 public class ApplicationManager {
     WebDriver wd;
 
